@@ -62,6 +62,8 @@ Creamos ya los 3 archivos: star.s make fike y el linker
 AHORA EJECUTAMOS CON MAKE CLEAR PARA LIMPIAR PARA BORRAR CUALQUIER CARPETA BUILD CON LOS ELF BIN ETC
 DESPUES CON MAKE COMPILA DE CERO Y GENERA LOS ARCHIVOS ANTERIOR MENCIONADOS PARA CORRECTO FUNCIONAMIENTO.
 
+![Imagen 2](imagenes/imagen2.png)
+
  
 El warning nos dice que en el MAIN una comparación de un valor sin signo con <0 siempre es falsa nos ice que la parte if (sw_value < 0) hace una comparación con un valor sin d¿signo y siempre es falsa (si el error esta en el main es el posible bug)
 “Y el error que nos da esque debemos incluir riscv-csr.h que exige el compilador use una flag – march con la extensión Zicsr para acceder a CSR” zicsr habilita instrucciones de CSR que es el control and status registers y lo solucionamos agregando en el make file ampliando : -march=rv32im_zicsr
@@ -97,7 +99,7 @@ continue                                         # sigue ejecutando y se detendr
 se va a demorar en el ultimo comando de gdb 
 
 
-
+![Imagen 3](imagenes/imagen3.png)
  
 
 En las líneas rojas mostramos los valores de sw_value, lo que pasa esque en QEMU al presionar la tecla d decrementamosen el contaodr de l bash de la fecha azul, ahí presionamos d para decrementar y cuando ya está en cero vuelve y decrementa cuando no debería ser asi, debería mantenerse en cero. Lo que esta ocurriendo es underflow en vez de -1 se convierte en ese numero grande 4294967295 porque definimos 
