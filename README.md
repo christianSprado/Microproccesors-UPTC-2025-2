@@ -56,26 +56,6 @@ void risc_v_trap_handler(void) {
 }
 
 
-ESTRUCTURA DE LOS ARCHIVOS DEL PROGRAMA
-Midtemr_II_qemu/
- ├─ Start.S
- ├─ link.ld
- ├─ Makefile
- ├─ main.c
- ├─ inc/
- │   ├─ rv32.h        → alias a riscv32.h si hace falta
- │   ├─ rv32_regs.h   → alias a riscv32_regs.h si hace falta
- │   ├─ riscv-csr.h
- │   ├─ soc_regs.h
- │   ├─ soc_uart.h
- │   ├─ systimer.h
- │   └─ soc_emu_gpio.h
- └─ src/
-     ├─ stub_stdlib.c
-     ├─ soc_uart.c
-     ├─ systimer.c
-     ├─ soc_emu_gpio.c
-     └─ trap.c        ← handler  (lo agregamos nosotros)
  
 
 Creamos ya los 3 archivos: star.s make fike y el linker
