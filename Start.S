@@ -34,7 +34,6 @@ _start:
     j       3b
 4:
 
-    /* 4) mtvec -> handler en C (débil si no lo usas) */
     .extern risc_v_trap_handler
     la      t0, risc_v_trap_handler
     csrw    mtvec, t0
